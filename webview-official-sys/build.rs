@@ -66,7 +66,7 @@ fn main() {
 
         fs::copy(src_asm_buf.as_path(), target_asm_buf.as_path()).unwrap();
     } else if target.contains("apple") {
-        build.file("webview-official/webview.cc").flag("-std=c++11");
+        build.file("webview-official/webview.cc").flag("-std=libc++");
 
         println!("cargo:rustc-link-lib=framework=Cocoa");
         println!("cargo:rustc-link-lib=framework=WebKit");
